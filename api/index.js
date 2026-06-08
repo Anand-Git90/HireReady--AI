@@ -1,13 +1,7 @@
 import express from "express";
 import cors from "cors";
 import multer from "multer";
-import { createRequire } from "module";
-
-const require = createRequire(import.meta.url);
-
-function getPdfParse() {
-  return require("pdf-parse");
-}
+import pdfParse from "pdf-parse";
 
 const app = express();
 const upload = multer({
@@ -325,7 +319,6 @@ async function extractResumeText(file) {
   }
 
   if (file.mimetype === "application/pdf" || file.originalname.toLowerCase().endsWith(".pdf")) {
-    const pdfParse = getPdfParse();
     const parsed = await pdfParse(file.buffer);
     return parsed.text;
   }
