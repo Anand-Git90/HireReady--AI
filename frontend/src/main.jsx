@@ -21,9 +21,9 @@ import {
 } from "lucide-react";
 import "./styles.css";
 
-const API_URL = "http://localhost:5003/api/analyze";
-const RESUME_API_URL = "http://localhost:5003/api/resume/analyze";
-const RESUME_BUILD_API_URL = "http://localhost:5003/api/resume/build";
+const API_URL = "/api/analyze";
+const RESUME_API_URL = "/api/resume/analyze";
+const RESUME_BUILD_API_URL = "/api/resume/build";
 
 const initialForm = {
   name: "",
